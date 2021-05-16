@@ -21,3 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+README-template.md
+README1.md
+style-guide.md
+/design
