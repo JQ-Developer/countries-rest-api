@@ -1,4 +1,4 @@
-import { Card } from "../card/card.component";
+import Card from "../card/card.component";
 
 import "./card-list.styles.scss";
 
