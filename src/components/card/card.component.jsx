@@ -1,17 +1,17 @@
 import { useContext } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import { CountriesContext } from "../providers/countries.provider";
 
 import "./card.styles.scss";
 
-const Card = ({ country, history, match }) => {
+const Card = ({ country }) => {
   const { setCountry } = useContext(CountriesContext);
 
   return (
-    <div
+    <Link
+      to={`${country.name}`}
       className="card-container"
       onClick={() => {
-        history.push(`${match.url}view/${country.name}`);
         setCountry(country);
       }}
     >
@@ -20,7 +20,7 @@ const Card = ({ country, history, match }) => {
       <p>Population: {country.population}</p>
       <p>Region: {country.region}</p>
       <p>Capital {country.capital}</p>
-    </div>
+    </Link>
   );
 };
 

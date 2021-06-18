@@ -1,49 +1,39 @@
-import { Component } from "react";
+import { useContext, useState } from "react";
+
+import { CountriesContext } from "../../components/providers/countries.provider";
+import { filteringCountries } from "../../utils/utils";
 
 import { CardList } from "../../components/card-list/card-list.component";
 
 import { SearchBox } from "../../components/search-box/search-box.component";
 
-class Homepage extends Component {
-  constructor() {
-    super();
+const Homepage = () => {
+  const { entireList, filteredCountries, setFilteredCountries, isLoading } =
+    useContext(CountriesContext);
+  const [searchValue, setSearchValue] = useState("");
 
-    this.state = {
-      countries: [],
-      searchField: "",
-    };
-  }
+  const handleChange = (e) => {
+    setSearchValue(e.target.value);
 
-  handleChange = (e) => {
-    this.setState({ searchField: e.target.value });
+    setFilteredCountries(filteringCountries(entireList, searchValue));
   };
 
-  componentDidMount() {
-    fetch("https://restcountries.eu/rest/v2/all")
-      .then((response) => response.json())
-      .then((listCountries) => this.setState({ countries: listCountries }));
-  }
+  return (
+    <div className="homepage">
+      <h1>Where in the world?</h1>
 
-  render() {
-    const { countries, searchField } = this.state;
+      <SearchBox
+        placehoder="Search for a country..."
+        handleChange={handleChange}
+      />
 
-    const filteredCountries = countries.filter((country) =>
-      country.name.toLowerCase().includes(searchField.toLowerCase())
-    );
-
-    return (
-      <div className="homepage">
-        <h1>Where in the world?</h1>
-
-        <SearchBox
-          placehoder="Search for a country..."
-          handleChange={this.handleChange}
-        />
-
-        <CardList countries={filteredCountries} />
-      </div>
-    );
-  }
-}
+      {isLoading ? (
+        "...Loading, please wait."
+      ) : (
+        <CardList countries={searchValue ? filteredCountries : entireList} />
+      )}
+    </div>
+  );
+};
 
 export default Homepage;
