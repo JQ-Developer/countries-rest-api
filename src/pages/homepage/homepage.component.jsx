@@ -20,8 +20,6 @@ const Homepage = () => {
 
   return (
     <div className="homepage">
-      <h1>Where in the world?</h1>
-
       <SearchBox
         placehoder="Search for a country..."
         handleChange={handleChange}

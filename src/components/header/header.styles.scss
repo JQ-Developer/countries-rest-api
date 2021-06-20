@@ -1,0 +1,36 @@
+.header-container {
+  box-shadow: 3px 3px 3px #52525246;
+  padding: 1rem 0;
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 90%;
+    margin: auto;
+  }
+
+  h1 {
+    font-weight: bold;
+  }
+
+  .dark-mode-btn {
+    border: none;
+    background: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    //transition: all 0.2s ease-in-out;
+
+    .icon {
+      margin-right: 0.5rem;
+    }
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
+}
