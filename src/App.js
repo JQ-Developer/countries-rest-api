@@ -5,6 +5,7 @@ import { CountriesContext } from "./components/providers/countries.provider";
 
 import Homepage from "./pages/homepage/homepage.component";
 import ViewPage from "./pages/view/view.component";
+import HeaderComponent from "./components/header/header";
 
 import "./App.css";
 
@@ -25,6 +26,7 @@ function App() {
 
   return (
     <div className="App">
+      <HeaderComponent />
       <Switch>
         <Route exact path="/" component={Homepage} />
         <Route path="/:country" component={ViewPage} />
