@@ -1,5 +1,4 @@
 .header-container {
-  box-shadow: 3px 3px 3px #52525246;
   padding: 1rem 0;
   .header {
     display: flex;
@@ -10,7 +9,9 @@
   }
 
   h1 {
-    font-weight: bold;
+    font-weight: bolder;
+    font-size: 1.6rem;
+    margin: 0.8rem 0;
   }
 
   .dark-mode-btn {
