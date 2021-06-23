@@ -7,11 +7,16 @@ export const fetchingData = async function () {
   return list;
 };
 
-//Filtering countries
+//Filtering countries by searching input
 export const filteringCountries = function (countries, searchField) {
-  const data = countries.filter((country) =>
+  return countries.filter((country) =>
     country.name.toLowerCase().includes(searchField.toLowerCase())
   );
+};
+//Filtering countries by region
+export const filteringCountriesByRegion = function (countries, region) {
+  if (region === "All") return countries;
+  const data = countries.filter((country) => country.region === region);
   return data;
 };
 

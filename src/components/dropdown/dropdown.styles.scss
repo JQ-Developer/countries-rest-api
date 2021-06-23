@@ -1,0 +1,64 @@
+.form {
+  position: relative;
+  font-family: inherit;
+  font-size: 0.8rem;
+
+  select {
+    color: rgb(71, 71, 71);
+    padding: 1rem;
+    background-color: white;
+    padding-left: 1.5rem;
+
+    border-radius: 4px;
+    outline: none;
+    box-shadow: 3px 3px 3px #52525246;
+  }
+
+  .dropdown {
+    width: 12rem;
+    position: relative;
+  }
+
+  .select {
+    padding: 1.2rem;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 3px 3px 3px #52525246;
+    color: rgb(71, 71, 71);
+    cursor: pointer;
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .list {
+    padding-left: 1rem;
+    border-radius: 4px;
+    background-color: white;
+
+    box-shadow: 3px 3px 3px #52525246;
+    color: rgb(71, 71, 71);
+
+    z-index: 10;
+
+    position: absolute;
+    top: 110%;
+    left: 0;
+    right: 0;
+
+    display: none;
+  }
+  .is-open {
+    display: block;
+  }
+  .item {
+    padding: 0.5rem;
+    cursor: pointer;
+
+    &:hover {
+      color: gray;
+    }
+  }
+}

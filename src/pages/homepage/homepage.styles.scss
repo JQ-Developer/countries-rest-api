@@ -1,0 +1,13 @@
+.homepage-container {
+  background-color: #fafafa;
+  .homepage {
+    max-width: 90%;
+    margin: auto;
+
+    .setup-menu {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}

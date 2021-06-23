@@ -37,34 +37,61 @@ const ViewPage = ({ match }) => {
       ) : (
         <div className="view-container">
           <div className="view-image">
-            <img src={showCountry.flag} alt={showCountry.name} />
+            <img
+              className="image"
+              src={showCountry.flag}
+              alt={showCountry.name}
+            />
           </div>
 
-          <ul className="view-details">
+          <div className="view-details">
             <h2 className="title">{showCountry.name}</h2>
-            <li className="data">Native Name: {showCountry.nativeName}</li>
-            <li className="data">Population: {showCountry.population}</li>
-            <li className="data">Region: {showCountry.region}</li>
-            <li className="data">Sub Region: {showCountry.subregion}</li>
-            <li className="data">Capital: {showCountry.capital}</li>
-            <li className="data">
-              Top Level Domain: {showCountry.topLevelDomain}
-            </li>
-            <li className="data">
-              Currencies: {mappingInfo(showCountry, "currencies")}
-            </li>
-            <li className="data">
-              Languages: {mappingInfo(showCountry, "languages")}
-            </li>
+            <ul className="li-1">
+              <li className="data">
+                <strong>Native Name: </strong>
+                {showCountry.nativeName}
+              </li>
+              <li className="data">
+                <strong>Population: </strong>
+                {showCountry.population}
+              </li>
+              <li className="data">
+                <strong>Region: </strong>
+                {showCountry.region}
+              </li>
+              <li className="data">
+                <strong>Sub Region: </strong>
+                {showCountry.subregion}
+              </li>
+              <li className="data">
+                <strong>Capital: </strong>
+                {showCountry.capital}
+              </li>
+            </ul>
+
+            <ul className="li-2">
+              <li className="data">
+                <strong>Top Level Domain: </strong>
+                {showCountry.topLevelDomain}
+              </li>
+              <li className="data">
+                <strong>Currencies: </strong>
+                {mappingInfo(showCountry, "currencies")}
+              </li>
+              <li className="data">
+                <strong>Languages: </strong>
+                {mappingInfo(showCountry, "languages")}
+              </li>
+            </ul>
             <li className="borders">
-              Border Countries:{" "}
+              <strong>Border Countries: </strong>
               {borderNames(showCountry, entireList).map((borderCountry) => (
                 <Link className="border-link" to={`${borderCountry}`}>
                   <li>{borderCountry}</li>
                 </Link>
               ))}
             </li>
-          </ul>
+          </div>
         </div>
       )}
     </div>
