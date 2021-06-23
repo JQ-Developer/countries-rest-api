@@ -15,11 +15,23 @@ const Card = ({ country }) => {
         setCountry(country);
       }}
     >
-      <img src={country.flag} alt={country.name} />
-      <h3>{country.name}</h3>
-      <p>Population: {country.population}</p>
-      <p>Region: {country.region}</p>
-      <p>Capital {country.capital}</p>
+      <div className="image">
+        <img src={country.flag} alt={country.name} />
+      </div>
+      <div className="information">
+        <h3>{country.name}</h3>
+        <p>
+          <strong>Population: </strong> {country.population}
+        </p>
+        <p>
+          <strong>Region: </strong>
+          {country.region}
+        </p>
+        <p>
+          <strong>Capital </strong>
+          {country.capital}
+        </p>
+      </div>
     </Link>
   );
 };
