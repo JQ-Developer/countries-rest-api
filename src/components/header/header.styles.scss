@@ -52,8 +52,11 @@
   }
 
   @media (max-width: 350px) {
-    .header {
-      flex-direction: column;
+    h1 {
+      font-size: 1rem;
+    }
+    .dark-mode-btn {
+      font-size: 0.8rem;
     }
   }
 }
