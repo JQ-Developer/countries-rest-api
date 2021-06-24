@@ -1,78 +1,123 @@
-.view-page {
-  max-width: 90%;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-
-  .back-btn {
+.view-page-container {
+  min-height: 88.05vh;
+  .view-page {
+    max-width: 90%;
+    margin: auto;
     display: flex;
-    align-items: center;
-    margin: 3rem 0;
-    padding: 0.5rem 1rem;
-    border: solid 1px rgb(212, 212, 212);
-    border-radius: 5px;
-    box-shadow: 3px 3px 3px #52525246;
+    flex-direction: column;
+    align-items: flex-start;
 
-    .icon {
-      margin-right: 0.5rem;
+    .back-btn {
+      display: flex;
+      align-items: center;
+      margin: 3rem 0;
+      padding: 0.5rem 1rem;
+      border: solid 1px rgb(212, 212, 212);
+      border-radius: 5px;
+      box-shadow: 3px 3px 3px #52525246;
+
+      .icon {
+        margin-right: 0.5rem;
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
     }
 
-    &:hover {
-      opacity: 0.8;
+    .view-container {
+      display: grid;
+      grid-template-rows: 25rem;
+      grid-template-columns: 40rem 40rem;
+
+      .view-image {
+        height: 100%;
+        width: 100%;
+        border: 1px solid #52525246;
+
+        .image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .view-details {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto 1fr 1fr;
+
+        padding: 2rem;
+        padding-top: 0;
+
+        .data {
+          font-size: 0.9rem;
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+        }
+
+        .title {
+          grid-column: 1/3;
+          margin-bottom: 2rem;
+          font-size: 2.5rem;
+        }
+
+        .borders {
+          grid-column: 1/3;
+
+          margin-top: 3.5rem;
+
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: flex-start;
+          .border-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            min-width: 135px;
+          }
+
+          .links-container {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            li {
+              align-self: flex-start;
+              text-align: center;
+
+              border: solid 1px rgb(212, 212, 212);
+              border-radius: 5px;
+              box-shadow: 3px 3px 3px #52525246;
+              min-width: 95px;
+              max-width: 305px;
+              font-size: 15px;
+
+              margin-left: 0.6rem;
+              margin-bottom: 0.5rem;
+
+              &:hover {
+                opacity: 0.8;
+              }
+            }
+          }
+        }
+      }
     }
   }
 
-  .view-container {
-    display: grid;
-    grid-template-rows: 25rem;
-    grid-template-columns: 40rem 40rem;
-
-    .view-image {
-      height: 100%;
-      width: 100%;
-      border: 1px solid #52525246;
-
-      .image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-
-    .view-details {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: auto 1fr 1fr;
-
-      padding: 2rem;
-
-      .title {
-        grid-column: 1/3;
-        margin-bottom: 2rem;
-      }
-
-      .borders {
-        grid-column: 1/3;
-
-        margin-top: 2rem;
-
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
-        :hover {
-          opacity: 0.8;
-        }
-
-        .border-link {
-          margin: 0.5rem;
-          padding: 0.2rem 0.5rem;
-          border: solid 1px rgb(212, 212, 212);
-          border-radius: 5px;
-          box-shadow: 3px 3px 3px #52525246;
-        }
-      }
+  &.is-dark-mode {
+    color: white;
+    background-color: hsl(207, 26%, 17%);
+    .back-btn,
+    .view-page .view-details .borders .links-container li {
+      color: white;
+      background-color: hsl(209, 23%, 22%);
+      border: none;
+      box-shadow: none;
     }
   }
 }

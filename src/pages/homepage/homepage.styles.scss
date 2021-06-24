@@ -1,5 +1,6 @@
 .homepage-container {
   background-color: #fafafa;
+  min-height: 100vh;
   .homepage {
     max-width: 90%;
     margin: auto;
@@ -9,5 +10,8 @@
       align-items: center;
       justify-content: space-between;
     }
+  }
+  &.is-dark-mode {
+    background: hsl(207, 26%, 17%);
   }
 }
