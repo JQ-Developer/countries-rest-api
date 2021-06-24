@@ -60,4 +60,11 @@
       background-color: hsl(209, 23%, 22%);
     }
   }
+
+  @media (max-width: 800px) {
+    .select {
+      padding: 0.8rem;
+      margin-bottom: 2rem;
+    }
+  }
 }
