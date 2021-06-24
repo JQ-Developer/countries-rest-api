@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { ThemeContext } from "../providers/theme.provider";
 
-import { FaRegMoon, FaGithub } from "react-icons/fa";
+import { FaRegMoon } from "react-icons/fa";
 import "./header.styles.scss";
 
 const HeaderComponent = () => {
