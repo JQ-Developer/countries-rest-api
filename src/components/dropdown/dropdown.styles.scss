@@ -2,17 +2,7 @@
   position: relative;
   font-family: inherit;
   font-size: 0.8rem;
-
-  select {
-    color: rgb(71, 71, 71);
-    padding: 1rem;
-    background-color: white;
-    padding-left: 1.5rem;
-
-    border-radius: 4px;
-    outline: none;
-    box-shadow: 3px 3px 3px #52525246;
-  }
+  color: rgb(71, 71, 71);
 
   .dropdown {
     width: 12rem;
@@ -24,7 +14,6 @@
     border-radius: 4px;
     background-color: white;
     box-shadow: 3px 3px 3px #52525246;
-    color: rgb(71, 71, 71);
     cursor: pointer;
 
     width: 100%;
@@ -39,7 +28,6 @@
     background-color: white;
 
     box-shadow: 3px 3px 3px #52525246;
-    color: rgb(71, 71, 71);
 
     z-index: 10;
 
@@ -59,6 +47,17 @@
 
     &:hover {
       color: gray;
+    }
+  }
+
+  &.is-dark-mode {
+    color: white;
+    .select {
+      background-color: hsl(209, 23%, 22%);
+    }
+
+    .list {
+      background-color: hsl(209, 23%, 22%);
     }
   }
 }

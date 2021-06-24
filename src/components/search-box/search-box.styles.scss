@@ -18,4 +18,11 @@
     left: 5%;
     color: lightgray;
   }
+
+  &.is-dark-mode {
+    input {
+      background-color: hsl(209, 23%, 22%);
+      color: white;
+    }
+  }
 }

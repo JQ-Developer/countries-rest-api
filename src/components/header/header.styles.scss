@@ -23,8 +23,6 @@
     align-items: center;
     justify-content: space-between;
 
-    //transition: all 0.2s ease-in-out;
-
     .icon {
       margin-right: 0.5rem;
     }
@@ -32,6 +30,19 @@
     &:hover {
       cursor: pointer;
       opacity: 0.8;
+    }
+  }
+
+  &.is-dark-mode {
+    color: white;
+    background-color: hsl(209, 23%, 22%);
+
+    h1 {
+      color: white;
+    }
+
+    .dark-mode-btn {
+      color: white;
     }
   }
 }

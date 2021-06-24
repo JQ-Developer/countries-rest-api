@@ -11,6 +11,10 @@ const CountriesProvider = ({ children }) => {
   const [filteredCountries, setFilteredCountries] = useState([]);
   //Loading
   const [isLoading, setIsLoading] = useState(true);
+  //Filter countries by region
+  const [filterValue, setFilterValue] = useState("All");
+  // Search value
+  const [searchValue, setSearchValue] = useState("");
 
   return (
     <CountriesContext.Provider
@@ -23,6 +27,10 @@ const CountriesProvider = ({ children }) => {
         setFilteredCountries,
         isLoading,
         setIsLoading,
+        filterValue,
+        setFilterValue,
+        searchValue,
+        setSearchValue,
       }}
     >
       {children}

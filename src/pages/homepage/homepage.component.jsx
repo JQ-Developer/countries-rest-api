@@ -1,37 +1,23 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 
 import { CountriesContext } from "../../components/providers/countries.provider";
-import { filteringCountries } from "../../utils/utils";
+import { ThemeContext } from "../../components/providers/theme.provider";
 
-import { CardList } from "../../components/card-list/card-list.component";
 import DropdownComponent from "../../components/dropdown/dropdown.component";
-import { SearchBox } from "../../components/search-box/search-box.component";
+import SearchBox from "../../components/search-box/search-box.component";
+import CardList from "../../components/card-list/card-list.component";
 
 import "./homepage.styles.scss";
 
 const Homepage = () => {
-  const { entireList, filteredCountries, setFilteredCountries, isLoading } =
-    useContext(CountriesContext);
-
-  const [searchValue, setSearchValue] = useState("");
-
-  const handleChange = (e) => {
-    setSearchValue(e.target.value);
-  };
-
-  useEffect(() => {
-    setFilteredCountries(filteringCountries(entireList, searchValue));
-  }, [searchValue]);
+  const { filteredCountries, isLoading } = useContext(CountriesContext);
+  const { isDarkMode } = useContext(ThemeContext);
 
   return (
-    <div className="homepage-container">
+    <div className={`homepage-container ${isDarkMode && "is-dark-mode"}`}>
       <div className="homepage">
         <div className="setup-menu">
-          <SearchBox
-            placehoder="Search for a country..."
-            handleChange={handleChange}
-          />
-
+          <SearchBox />
           <DropdownComponent />
         </div>
 

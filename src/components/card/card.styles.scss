@@ -48,4 +48,10 @@
   img {
     width: 100%;
   }
+
+  &.is-dark-mode {
+    background-color: hsl(209, 23%, 22%);
+    color: white;
+    border: none;
+  }
 }
