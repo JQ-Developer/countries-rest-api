@@ -1,16 +1,20 @@
 .card-container {
-  background-color: white;
-  width: 100%;
-  border: 1px solid #c4c4c4;
-  text-align: left;
-  border-radius: 6px;
-  box-shadow: 5px 6px 5px rgba(0, 0, 0, 0.192);
-  cursor: pointer;
-  //transform:translateY();
-  transition: transform 0.2s ease-in-out;
-
   display: flex;
   flex-direction: column;
+  width: 100%;
+
+  background-color: white;
+  border: 1px solid #c4c4c4;
+  border-radius: 6px;
+  box-shadow: 5px 6px 5px rgba(0, 0, 0, 0.192);
+
+  cursor: pointer;
+  text-align: left;
+  transition: transform 0.2s ease-in-out;
+
+  @media (max-width: 350px) {
+    margin: 2rem 0;
+  }
 
   .image {
     width: 100%;
@@ -26,8 +30,8 @@
   }
 
   .information {
-    padding: 0.5rem 1.5rem;
     margin-top: 1rem;
+    padding: 0.5rem 1.5rem;
     font-size: 0.9rem;
 
     strong {
@@ -45,13 +49,19 @@
     box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.192);
   }
 
-  img {
-    width: 100%;
-  }
-
   &.is-dark-mode {
     background-color: hsl(209, 23%, 22%);
     color: white;
     border: none;
+  }
+
+  @media (max-width: 650px) {
+    .information {
+      font-size: 1rem;
+    }
+    &:hover {
+      transform: none;
+      box-shadow: none;
+    }
   }
 }
