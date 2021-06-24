@@ -2,6 +2,7 @@ import { useContext } from "react";
 
 import { CountriesContext } from "../../components/providers/countries.provider";
 import { ThemeContext } from "../../components/providers/theme.provider";
+import { CommonLoading } from "react-loadingg";
 
 import DropdownComponent from "../../components/dropdown/dropdown.component";
 import SearchBox from "../../components/search-box/search-box.component";
@@ -22,7 +23,7 @@ const Homepage = () => {
         </div>
 
         {isLoading ? (
-          "...Loading, please wait."
+          <CommonLoading />
         ) : (
           <CardList countries={filteredCountries} />
         )}

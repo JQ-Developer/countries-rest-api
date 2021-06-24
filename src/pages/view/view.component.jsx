@@ -5,6 +5,7 @@ import { filteringCountries, borderNames } from "../../utils/utils";
 
 import { CountriesContext } from "../../components/providers/countries.provider";
 import { ThemeContext } from "../../components/providers/theme.provider";
+import { CommonLoading } from "react-loadingg";
 
 import { FaArrowLeft } from "react-icons/fa";
 import "./view.styles.scss";
@@ -32,7 +33,7 @@ const ViewPage = ({ match }) => {
           Back
         </Link>
         {isLoading ? (
-          "...Loading, please wait"
+          <CommonLoading />
         ) : (
           <div className="view-container">
             <div className="view-image">
