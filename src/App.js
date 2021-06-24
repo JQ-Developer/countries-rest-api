@@ -1,6 +1,8 @@
 import { useContext, useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
+
 import { fetchingData } from "./utils/utils";
+
 import { CountriesContext } from "./components/providers/countries.provider";
 
 import Homepage from "./pages/homepage/homepage.component";
@@ -10,19 +12,21 @@ import HeaderComponent from "./components/header/header";
 import "./App.css";
 
 function App() {
-  const { setEntireList, setIsLoading } = useContext(CountriesContext);
+  const { setEntireList, setIsLoading, setFilteredCountries } =
+    useContext(CountriesContext);
 
   useEffect(() => {
     (async () => {
       //fetching data
       const data = await fetchingData();
-
       //setting the list of countries
       setEntireList(data);
       //setting loading state
       setIsLoading(false);
+      // setting filtered countries to entire list
+      setFilteredCountries(data);
     })();
-  }, [setEntireList, setIsLoading]);
+  }, [setEntireList, setIsLoading, setFilteredCountries]);
 
   return (
     <div className="App">

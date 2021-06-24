@@ -2,7 +2,7 @@ import Card from "../card/card.component";
 
 import "./card-list.styles.scss";
 
-export const CardList = ({ countries }) => {
+const CardList = ({ countries }) => {
   return (
     <div className="card-list">
       {countries.map((country) => (
@@ -11,3 +11,5 @@ export const CardList = ({ countries }) => {
     </div>
   );
 };
+
+export default CardList;
